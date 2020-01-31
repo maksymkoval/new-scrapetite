@@ -12,9 +12,9 @@
     font-family: impactreg;
 }
 body{
-    width: 100%;
+    width: 100vw;
     overflow-x: hidden;
-    margin: auto;
+    margin: 0;
     position: absolute;
 }
 header{
@@ -168,13 +168,9 @@ table{
     text-transform: uppercase;
     padding:0;
 }
- .borderbottom{
-    border-bottom: 1pt solid black;
-    z-index: 10;
-    border-collapse: collapse;padding: 0;
-    }
+ 
     th{
-        border-bottom: 1pt solid #FC5400;
+        border-bottom: 0.5px solid #FC5400;
         color: #606060;
         font-weight: 500;
         padding:0;
@@ -186,6 +182,7 @@ table{
     td{
         text-align: center;
         padding:0;
+        border-bottom: 0.5px solid black;
     }
 
     td:not(:first-of-type){
@@ -201,16 +198,19 @@ table{
      padding-top:40px;
     }
     .case-metric>img{
-    border-bottom: 1pt solid #404141;
-    width: 570px;
+    border-bottom: 0.5px solid #404141;
+    max-width: 570px;
     }
     .case-metric .case{
-        border-bottom: 1pt solid #FC5400;
+        border-bottom: 0.5px solid #FC5400;
         max-width: 570px;
+    }
+    tr .space{
+        color:white;
     }
     .pathblock{
         display:flex;
-        width: 100%;
+        width: 100vw;
         background-image: url(../images/Path.png);
         background-repeat: no-repeat;
         background-size: cover;
@@ -257,10 +257,11 @@ table{
             letter-spacing: 1px;
             font-family: impactreg;
             font-weight: 500;
+            
         }
      .rectangle p{
          word-wrap: break-word;
-         width: 90%;
+         max-width: 90%;
          font-size: 18px;
          font-family: quicktype;
          color:#B2B2B2;
@@ -273,8 +274,24 @@ table{
         .hideimg{
             display: none;
         }
+        body{
+            overflow-x: hidden;
+        }
+        
      }
      @media (max-width: 1250px){
+        .tradew4 img:nth-of-type(2){
+            padding:0;
+        }
+        .bladex5{
+            padding:0;
+        }
+        .bladeoptions img:nth-of-type(2){
+            padding:0;
+        }
+        .bladeoptions img:nth-of-type(4){
+            padding:0;
+        }
         .mainblock .navbar ul {
             display:grid;
             grid-template-columns: 1fr 1fr;
@@ -282,6 +299,9 @@ table{
             padding-left: 0;
             justify-content: space-between;
            margin:0;
+         }
+         .about, .targetscraping{
+             margin: auto;
          }
          .navbar ul li{
             justify-content: space-between;
@@ -302,7 +322,7 @@ table{
              margin: auto;
          }
          .about img{
-        width: 500px;
+        max-width: 570px;
          }
          .case-metric .case img{
              width: 100px;
@@ -310,10 +330,22 @@ table{
          .case-metric{
              margin-bottom: 20px;
          }
+         .text1,.text2,.text3{
+             padding:0;
+             margin:0;
+             max-width: 130px;
+         }
          .rectangle{
-             padding-top:0;
+         
+             padding: 0;
+             
              height: 200px;
-             margin-top: -20px;
+             margin-top: -30px;
+         }
+         .rectangle h2{
+            max-width: 300px;
+            margin: auto;
+            padding-top: 20px;
          }
      }
      @media (max-width: 590px){
@@ -347,6 +379,9 @@ table{
             width: 80%;
             margin: auto;
             
+        }
+        .advancedworkflow{
+        
         }
         .icon img:last-of-type{
             width: 50px;
@@ -389,7 +424,7 @@ padding-bottom: 40px;
             height: 320px;
         }
         .contacts img{
-           padding-left:10px;
+           padding-left:0px;
         }
         
      }
