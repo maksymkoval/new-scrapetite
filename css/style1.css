@@ -1,7 +1,11 @@
 @font-face{
     src: url(fonts/QuickType\ Condensed\ Regular.ttf);
-    font-family: quicktype;
+    font-family: quicktype; 
     
+}
+@font-face{
+    src: url(fonts/Goudy\ Old\ Style\ Regular.ttf);
+    font-family: goudy; 
 }
 @font-face{
     src: url(fonts/ofont.ru_Impact.ttf);
@@ -33,13 +37,14 @@ header{
 
 }
 .navbar ul li{
-  text-decoration: none;
-  display:inline-block;
- font-family: quicktype;
- font-weight: bold;
- font-size: 18px;
- color: #373739;
-  text-transform: uppercase;
+    text-decoration: none;
+    display:inline-block;
+   font-family: quicktype;
+   font-weight: 500;
+   font-size: 16px;
+   letter-spacing: 0.5px;
+   color: #373739;
+    text-transform: uppercase;
 }
 .navbar ul li:hover{
     color: #FC5400;
@@ -55,10 +60,14 @@ header{
     justify-content: space-between;
     margin-top: 15px;
     width: 95vw; 
-    margin: 20px auto 4px;
+    margin: 30px auto 0;
 }
 .wideblade img:nth-of-type(3){
 padding-left:30px;
+}
+.icon img:nth-of-type(2){
+    border-bottom:3px solid #8D482A ;
+    border-top:3px solid #8D482A ;
 }
 
 .icon img:nth-of-type(1){
@@ -75,15 +84,15 @@ padding-left:30px;
 }
 .bladeoptions p, .packagingoptions p{
     position: absolute;
-    width: 48px;
+    width: 55px;
     margin:auto;
     text-align: center;
     text-transform: uppercase;
-    padding-left:10px;
+    padding-left:8px;
     padding-top: 2px;
     font-size: 12px;
     font-family: quicktype;
-    font-weight:bold;
+    font-weight:600;
     color:#232323;
 }
 .bladeoptions img{
@@ -154,36 +163,50 @@ table{
     width: 570px;
     font-family: impactreg;
     color:#808080;
-    font-size: 18px;
+    font-size: 16px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
+    padding:0;
 }
- tr.borderbottom td{
+ .borderbottom{
     border-bottom: 1pt solid black;
+    z-index: 10;
+    border-collapse: collapse;padding: 0;
     }
     th{
         border-bottom: 1pt solid #FC5400;
+        color: #606060;
+        font-weight: 500;
+        padding:0;
     }
     th:nth-of-type(1){
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: goudy;
         text-align: start;
     }
     td{
         text-align: center;
+        padding:0;
     }
+
     td:not(:first-of-type){
-        font-weight: 100;
+        font-family:quicktype;
+        color:#404141;
+        font-size:15px;
+        font-weight: 500;
     }
     td:nth-of-type(1){
         text-align: start;
     }
-    .case-metric img:first-of-type{
+    .case-metric .case{
      padding-top:40px;
     }
-    .case-metric img{
-    border-bottom: 1pt solid black;
+    .case-metric>img{
+    border-bottom: 1pt solid #404141;
+    width: 570px;
     }
-    .case-metric img:first-of-type{
+    .case-metric .case{
         border-bottom: 1pt solid #FC5400;
+        max-width: 570px;
     }
     .pathblock{
         display:flex;
@@ -207,7 +230,7 @@ table{
         font-family: quicktype;
         }
         .text1, .text2, .text3{
-            margin-left:50px;
+            margin-left:30px;
             max-width: 163px;
             height: 128px;
            
@@ -215,6 +238,8 @@ table{
         .text1 h3, .text2 h3, .text3 h3{
             font-size: 18px;
             font-family: impactreg;
+            font-weight: 500;
+            letter-spacing: 0.5px;
         }
         .rectangle{
             background-image: url(../images/bcgr-Rectangle.png);
@@ -229,28 +254,41 @@ table{
         .rectangle h2{
             margin: 0;
             font-size: 21px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             font-family: impactreg;
+            font-weight: 500;
         }
      .rectangle p{
          word-wrap: break-word;
          width: 90%;
          font-size: 18px;
          font-family: quicktype;
+         color:#B2B2B2;
      }
      .contacts{
          right:40px;
          position: absolute;
      }
-     @media (max-width: 1030px){
-        .mainblock1 .navbar ul {
-             display:grid;
-             grid-template-columns: 1fr 1fr;
-             grid-column-gap: 10px;
-             padding-left: 0;
+     @media (max-width: 1024px){
+        .hideimg{
+            display: none;
+        }
+     }
+     @media (max-width: 1250px){
+        .mainblock .navbar ul {
+            display:grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 10px;
+            padding-left: 0;
+            justify-content: space-between;
+           margin:0;
          }
-         .mainblock1 .navbar ul li{
-             border-bottom: 2px solid #FC5400;;
+         .navbar ul li{
+            justify-content: space-between;
+            text-align: center;
+         }
+         .mainblock .navbar ul li{
+             border-bottom: 2px solid #FC5400;
          }
          .bladedescription img:nth-of-type(2){
            
@@ -266,7 +304,7 @@ table{
          .about img{
         width: 500px;
          }
-         .case-metric img:first-of-type{
+         .case-metric .case img{
              width: 100px;
          }
          .case-metric{
@@ -280,8 +318,17 @@ table{
      }
      @media (max-width: 590px){
          body{box-sizing: border-box;}
-         
-        .mainblock1 .navbar ul {
+         .logo{
+            margin: auto;
+        }
+        .navbar ul{
+            padding-bottom: 10px;
+        }
+        .navbar ul li{
+            text-align: center;
+
+        }
+        .mainblock .navbar ul {
            grid-template-columns: 1fr;
            padding-top: 5px;
         }
@@ -306,6 +353,7 @@ table{
         }
         .bladedescription img:last-of-type{
 width: 300px;
+padding-top: 30px;
         }
         .tradew4 img:nth-of-type(3){
             display: none;
@@ -318,9 +366,16 @@ width: 220px;
         }
         .parameters .targetscraping img{
 width: 300px;
+margin: auto;
+        }
+        .targetscraping{
+            margin: auto;
         }
         .about img{
             width: 300px;
+        }
+        .about{
+            margin: auto;
         }
         table{
             width: 300px;
@@ -336,4 +391,5 @@ padding-bottom: 40px;
         .contacts img{
            padding-left:10px;
         }
+        
      }
